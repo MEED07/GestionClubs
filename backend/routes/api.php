@@ -64,7 +64,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     /*
     |--------------------------------------------------------------------------
-    | Admin Club uniquement
+    | Admin Club uniquement 
     |--------------------------------------------------------------------------
     */
     // routes/api.php
