@@ -17,9 +17,9 @@ class CreateMembreClubTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('club_id')->constrained('clubs')->onDelete('cascade');
+            $table->enum('statut', ['en_attente', 'accepte', 'refuse'])->default('en_attente');
             $table->timestamps();
         });
-        
     }
 
     /**

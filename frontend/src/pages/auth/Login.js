@@ -27,7 +27,7 @@ function Login() {
       // Rediriger selon le rôle
       switch (user.role) {
         case 'visiteur':
-          navigate('/clubs');
+          navigate('/');
           break;
         case 'participant':
           navigate('/activites');

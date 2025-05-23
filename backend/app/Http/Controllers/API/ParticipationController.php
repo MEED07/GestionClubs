@@ -1,37 +1,51 @@
 <?php
-
 namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\Participation;
 use App\Models\Evenement;
-use App\Models\User;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class ParticipationController extends Controller
 {
-    // Créer une participation
-    public function store(Request $request)
+    // Lister les demandes en attente
+    public function demandes($evenementId)
     {
-        $request->validate([
-            'user_id' => 'required|exists:users,id',
-            'evenement_id' => 'required|exists:evenements,id',
-        ]);
+        $evenement = Evenement::with('club')->findOrFail($evenementId);
+        $this->authorizeEvent($evenement);
 
-        $participation = Participation::create([
-            'user_id' => $request->user_id,
-            'evenement_id' => $request->evenement_id,
-        ]);
+        $demandes = Participation::where('evenement_id', $evenementId)
+                                 ->where('statut', 'en attente')
+                                 ->with('user')
+                                 ->get();
 
-        return response()->json($participation, 201);
+        return response()->json($demandes);
     }
 
-    // Supprimer une participation
-    public function destroy($id)
+    // Accepter un participant
+    public function accepter($id)
     {
-        $participation = Participation::findOrFail($id);
-        $participation->delete();
+        $participation = Participation::with('evenement.club')->findOrFail($id);
+        $this->authorizeEvent($participation->evenement);
 
-        return response()->json(null, 204);
+        $participation->update(['statut' => 'accepté']);
+        return response()->json(['message' => 'Participant accepté']);
+    }
+
+    // Refuser un participant
+    public function refuser($id)
+    {
+        $participation = Participation::with('evenement.club')->findOrFail($id);
+        $this->authorizeEvent($participation->evenement);
+
+        $participation->update(['statut' => 'refusé']);
+        return response()->json(['message' => 'Participant refusé']);
+    }
+
+    private function authorizeEvent(Evenement $evenement)
+    {
+        if ($evenement->club->admin_club_id !== auth()->id()) {
+            abort(403, 'Accès refusé');
+        }
     }
 }

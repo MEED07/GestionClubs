@@ -1,10 +1,4 @@
 <?php
-
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,16 +8,21 @@ class Evenement extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['club_id', 'titre', 'description', 'date_debut', 'date_fin', 'lieu'];
+    protected $fillable = [
+        'nom', 'description', 'date_debut', 'date_fin', 'lieu',
+        'club_id', 'admin_club_id',
+      ];
+      
+    
 
+    // Définir la relation avec le club
     public function club()
     {
         return $this->belongsTo(Club::class);
     }
 
-    public function participants()
+    public function admin()
     {
-        return $this->belongsToMany(User::class, 'participations')
-                    ->withPivot('statut');
+        return $this->belongsTo(User::class, 'admin_club_id');
     }
 }

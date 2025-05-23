@@ -21,7 +21,7 @@ class Club extends Model
     {
         return $this->belongsTo(User::class, 'admin_club_id');
     }
-
+    
     // Les membres du club
     public function membres()
     {
@@ -29,8 +29,14 @@ class Club extends Model
     }
 
     // Les événements du club
+    
     public function evenements()
     {
         return $this->hasMany(Evenement::class);
+    }
+    
+    public function demandes()
+    {
+        return $this->hasMany(MembreClub::class);
     }
 }

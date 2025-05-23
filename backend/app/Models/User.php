@@ -6,11 +6,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\MembreClub;  // <-- Ajouté ici
 
 class User extends Authenticatable
 {
-    use  HasFactory, Notifiable;
-    use HasApiTokens;
+    use HasApiTokens, HasFactory, Notifiable;
 
     protected $fillable = [
         'name',
@@ -24,21 +24,29 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    // Un admin_club peut gérer plusieurs clubs
+    // Relation pour les clubs administrés
     public function clubsAdministres()
     {
         return $this->hasMany(Club::class, 'admin_club_id');
     }
 
-    // Un utilisateur peut être membre de plusieurs clubs
+    // Relation pour les clubs dont l'utilisateur est membre
     public function clubs()
     {
         return $this->belongsToMany(Club::class, 'membre_club');
     }
 
-    // Un utilisateur peut participer à plusieurs événements
+    // Relation pour les participations (événements)
     public function participations()
     {
         return $this->hasMany(Participation::class);
+    }
+
+    // Récupérer toutes les demandes d'adhésion en attente pour les clubs que cet utilisateur administre
+    public function demandesAdhesionRecues()
+    {
+        return MembreClub::whereHas('club', function ($query) {
+            $query->where('admin_club_id', $this->id);
+        })->with(['user', 'club']);
     }
 }
