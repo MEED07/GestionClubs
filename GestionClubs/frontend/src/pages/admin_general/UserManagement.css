@@ -1,0 +1,317 @@
+/* UserManagement.css */
+
+/* Container principal */
+.user-management {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 80px; /* Espace pour la navbar */
+  }
+  
+  /* Titre principal */
+  .user-management h2 {
+    color: #1e70bf;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    border-bottom: 3px solid #1e70bf;
+    padding-bottom: 1rem;
+  }
+  
+  /* Messages d'erreur */
+  .error-message {
+    background-color: #fee;
+    color: #c53030;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #c53030;
+    font-weight: 500;
+  }
+  
+  /* Formulaire */
+  .user-form {
+    background-color: #f8fafb;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+  }
+  
+  .user-form:hover {
+    border-color: #1e70bf;
+    box-shadow: 0 2px 12px rgba(30, 112, 191, 0.1);
+  }
+  
+  .form-group {
+    display: flex;
+    gap: 1rem;
+    align-items: end;
+    flex-wrap: wrap;
+  }
+  
+  .user-form input,
+  .user-form select {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.875rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+  }
+  
+  .user-form input:focus,
+  .user-form select:focus {
+    outline: none;
+    border-color: #1e70bf;
+    box-shadow: 0 0 0 3px rgba(30, 112, 191, 0.1);
+  }
+  
+  .user-form input::placeholder {
+    color: #a0aec0;
+  }
+  
+  /* Boutons */
+  .btn {
+    padding: 0.875rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .btn-primary {
+    background-color: #1e70bf;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #1a5fa0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(30, 112, 191, 0.3);
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+  }
+  
+  /* Tableau */
+  .users-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .users-table thead {
+    background: linear-gradient(135deg, #1e70bf 0%, #28a745 100%);
+    color: white;
+  }
+  
+  .users-table th {
+    padding: 1.25rem 1rem;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .users-table tbody tr {
+    border-bottom: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+  }
+  
+  .users-table tbody tr:hover {
+    background-color: #f8fafb;
+    transform: scale(1.01);
+  }
+  
+  .users-table tbody tr:last-child {
+    border-bottom: none;
+  }
+  
+  .users-table td {
+    padding: 1rem;
+    font-size: 0.95rem;
+    color: #4a5568;
+  }
+  
+  .users-table td:first-child {
+    font-weight: 600;
+    color: #1e70bf;
+  }
+  
+  /* Actions */
+  .actions-cell {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .user-management {
+      margin: 1rem;
+      padding: 1rem;
+      margin-top: 70px;
+    }
+  
+    .user-management h2 {
+      font-size: 2rem;
+    }
+  
+    .form-group {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .user-form input,
+    .user-form select {
+      min-width: auto;
+    }
+  
+    .users-table {
+      font-size: 0.875rem;
+    }
+  
+    .users-table th,
+    .users-table td {
+      padding: 0.75rem 0.5rem;
+    }
+  
+    .actions-cell {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+  
+    .btn {
+      font-size: 0.875rem;
+      padding: 0.75rem 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .users-table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  
+    .users-table thead,
+    .users-table tbody,
+    .users-table th,
+    .users-table td,
+    .users-table tr {
+      display: block;
+    }
+  
+    .users-table thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+  
+    .users-table tr {
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      padding: 1rem;
+      background-color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+  
+    .users-table td {
+      border: none;
+      position: relative;
+      padding-left: 30%;
+      text-align: left;
+    }
+  
+    .users-table td:before {
+      content: attr(data-label) ": ";
+      position: absolute;
+      left: 6px;
+      width: 25%;
+      padding-right: 10px;
+      white-space: nowrap;
+      font-weight: 600;
+      color: #1e70bf;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .user-management {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  /* États de chargement */
+  .loading {
+    text-align: center;
+    padding: 2rem;
+    color: #1e70bf;
+    font-size: 1.1rem;
+  }
+  
+  .loading::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #1e70bf;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s ease-in-out infinite;
+    margin-left: 10px;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }

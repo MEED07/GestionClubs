@@ -1,0 +1,86 @@
+.partenaire-container {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.partenaire-container h2 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: center;  /* centre les cartes horizontalement */
+  gap: 2rem;                /* espace entre les cartes */
+  flex-wrap: nowrap;        /* pas de retour à la ligne */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 300px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  background-color: #27548A;
+  transform: translateY(-10px);
+}
+
+.card:hover h3,
+.card:hover p {
+  color: #fff;
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1.5rem;
+  object-fit: contain;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.card p {
+  color: #666;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+  margin: 0;
+}
+
+/* Responsive : sur petits écrans, les cartes prennent toute la largeur (empilement vertical) */
+@media (max-width: 1024px) {
+  .cards-wrapper {
+    flex-wrap: wrap;   /* autorise le retour à la ligne */
+    justify-content: center;
+  }
+  .card {
+    width: 45%;        /* 2 cartes par ligne environ */
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .partenaire-container h2 {
+    font-size: 2rem;
+  }
+  .card {
+    width: 100%;       /* 1 carte par ligne */
+    max-width: 100%;
+  }
+}

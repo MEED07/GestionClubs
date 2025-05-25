@@ -1,0 +1,73 @@
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    background: white;
+    padding: 40px 20px;
+    border-radius: 15px;
+    max-width: 1200px;
+    margin: 100px auto;
+  }
+  
+  .stat-item {
+    text-align: center;
+    min-width: 160px;
+    flex: 1 1 160px;
+  }
+  .stat-item:hover {
+    cursor: pointer;
+  }
+  
+  .stat-item i {
+    font-size: 60px;
+    color: #4A90E2;
+    margin-bottom: 10px;
+  }
+  
+  .stat-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #272727;
+  }
+  
+  .stat-label {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Animation rebond au hover */
+.stat-item i {
+    transition: transform 0.3s ease;
+  }
+  
+  .stat-item:hover i {
+    transform: scale(1.2) rotate(5deg);
+    color: #1e70bf;
+  }
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  .stat-item:hover i {
+    animation: bounce 0.5s;
+    color: #1e70bf;
+  }
+    
+  /* Animation de scroll */
+
+  [data-aos="fade-right"] {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  
+  [data-aos="fade-left"] {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  

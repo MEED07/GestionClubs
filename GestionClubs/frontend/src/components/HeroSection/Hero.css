@@ -1,0 +1,30 @@
+.hero-section {
+    position: relative;
+    height: calc(100vh - 80px); /* Hauteur ajustée pour tenir compte de la navbar */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 80px; /* Espace pour la navbar */
+    overflow: hidden; /* Évite débordement */
+  }
+  
+  /* Ajout d'un conteneur d'image pour un meilleur contrôle */
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 80px;
+    z-index: 1;
+  }
+  
+  .hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garde les proportions tout en couvrant */
+    object-position: center; /* Centre l'image */
+  }
+  

@@ -1,0 +1,251 @@
+/* Container principal */
+.add-club-container {
+    max-width: 800px;
+    margin: 80px auto 0 auto;
+    padding: 2rem;
+  }
+  
+  /* Titre principal */
+  .add-club-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #222;
+  }
+  
+  .add-club-description {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 3rem;
+  }
+  
+  /* Messages de feedback */
+  .message {
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .message.success {
+    color: #27ae60;
+    background-color: #d5f4e6;
+    border: 1px solid #27ae60;
+  }
+  
+  .message.error {
+    color: #e74c3c;
+    background-color: #ffeaea;
+    border: 1px solid #e74c3c;
+  }
+  
+  /* Formulaire principal */
+  .add-club-form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .add-club-form:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Groupes de champs */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-label {
+    display: block;
+    text-align: left !important;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+    left: 0;
+  }
+  
+  /* Champs de saisie */
+  .form-input, .form-textarea, .form-select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: inherit;
+  }
+  
+  .form-input:focus, .form-textarea:focus, .form-select:focus {
+    outline: none;
+    border-color: #1e70bf;
+    box-shadow: 0 0 0 3px rgba(30, 112, 191, 0.1);
+  }
+  
+  .form-textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  /* Champ de fichier personnalisé */
+  .file-input-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .file-input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  .file-input-label {
+    display: block;
+    padding: 0.8rem;
+    border: 2px dashed #e0e0e0;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    color: #555;
+  }
+  
+  .file-input-label:hover {
+    border-color: #1e70bf;
+    background-color: #f8f9fa;
+  }
+  
+  .file-input:focus + .file-input-label {
+    border-color: #1e70bf;
+    box-shadow: 0 0 0 3px rgba(30, 112, 191, 0.1);
+  }
+  
+  .file-selected {
+    border-color: #27ae60;
+    background-color: #d5f4e6;
+    color: #27ae60;
+  }
+  
+  /* Bouton de soumission */
+  .submit-button {
+    background-color: #1e70bf;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .submit-button:hover {
+    background-color: #165a9c;
+    transform: translateY(-1px);
+  }
+  
+  .submit-button:active {
+    transform: translateY(0);
+  }
+  
+  .submit-button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Select personnalisé */
+  .form-select {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23666' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 0.65rem auto;
+    appearance: none;
+    padding-right: 2.5rem;
+  }
+  
+  /* Animation de chargement */
+  .loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #1e70bf;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 0.5rem;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* États de validation */
+  .form-input.valid, .form-textarea.valid, .form-select.valid {
+    border-color: #27ae60;
+  }
+  
+  .form-input.invalid, .form-textarea.invalid, .form-select.invalid {
+    border-color: #e74c3c;
+  }
+  
+  .validation-message {
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+  }
+  
+  .validation-message.success {
+    color: #27ae60;
+  }
+  
+  .validation-message.error {
+    color: #e74c3c;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .add-club-container {
+      margin-top: 60px;
+      padding: 1rem;
+    }
+    
+    .add-club-title {
+      font-size: 2rem;
+    }
+    
+    .add-club-form {
+      padding: 1.5rem;
+    }
+    
+    .submit-button {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .add-club-container {
+      margin-top: 40px;
+      padding: 0.5rem;
+    }
+    
+    .add-club-form {
+      padding: 1rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1rem;
+    }
+  }
+
+  

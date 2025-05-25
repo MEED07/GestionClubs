@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150">
+  <style>
+    .text { font-family: Arial, sans-serif; font-weight: bold; }
+    .blue { fill: #27548A; }
+    .green { fill: #009639; }
+  </style>
+  <rect width="300" height="150" fill="white"/>
+  <text x="50" y="85" class="text blue" font-size="40">OFPPT</text>
+  <text x="50" y="110" class="text green" font-size="16">Office de la Formation Professionnelle</text>
+</svg>

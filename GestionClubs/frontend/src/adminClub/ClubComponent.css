@@ -1,0 +1,236 @@
+/* Container principal */
+.user-management-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    margin-top:80px;
+  }
+  
+  /* Titre principal */
+  .user-management-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #222;
+  }
+  
+  .user-management-description {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 3rem;
+  }
+  
+  /* Messages d'erreur */
+  .error-message {
+    color: #e74c3c;
+    background-color: #ffeaea;
+    border: 1px solid #e74c3c;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  /* Formulaire */
+  .user-form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 3rem;
+  }
+  
+  .form-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: end;
+  }
+  
+  .form-input, .form-select {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-input:focus, .form-select:focus {
+    outline: none;
+    border-color: #1e70bf;
+  }
+  
+  .form-button {
+    background-color: #1e70bf;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-width: 120px;
+  }
+  
+  .form-button:hover {
+    background-color: #165a9c;
+  }
+  
+  /* Table des utilisateurs */
+  .users-table-container {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .users-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .users-table th {
+    background-color: #1e70bf;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .users-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .users-table tbody tr:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .users-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  /* Boutons d'actions */
+  .action-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .edit-button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-button:hover {
+    background-color: #e67e22;
+  }
+  
+  .delete-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .delete-button:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Styles pour les rôles */
+  .role-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .role-admin-general {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .role-admin-club {
+    background-color: #f39c12;
+    color: white;
+  }
+  
+  .role-participant {
+    background-color: #27ae60;
+    color: white;
+  }
+  
+  .role-visiteur {
+    background-color: #95a5a6;
+    color: white;
+  }
+  
+  /* États de chargement */
+  .loading, .no-users {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .user-management-container {
+      padding: 1rem;
+    }
+    
+    .user-management-title {
+      font-size: 2rem;
+    }
+    
+    .form-group {
+      flex-direction: column;
+    }
+    
+    .form-input, .form-select, .form-button {
+      min-width: auto;
+      width: 100%;
+    }
+    
+    .users-table-container {
+      overflow-x: auto;
+    }
+    
+    .users-table {
+      min-width: 600px;
+    }
+    
+    .action-buttons {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .user-management-container {
+      padding: 0.5rem;
+    }
+    
+    .user-form {
+      padding: 1rem;
+    }
+    
+    .users-table th,
+    .users-table td {
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+  }
